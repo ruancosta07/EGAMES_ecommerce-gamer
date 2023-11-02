@@ -1,0 +1,202 @@
+
+#login-form{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+#criar-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.form-shadow{
+    box-shadow: 0 0 2px 1px rgba(0, 0, 0, .15);
+}
+
+.form-active{
+    border-color: #3D55B8;
+}
+
+.senha-input, .usuario-input{
+    width: 60%;
+    transition: .3s ease;
+}
+
+.login-titulo{
+    position: relative;
+    line-height: 1;
+    margin-left: 8px;
+}
+
+.login-titulo::before{
+    content: '';
+    display: inline-block;
+    height: 100%;
+    position: absolute;
+    left: -8px;
+    width: 4px;
+    background-color: #3D55B8;
+}
+
+
+
+.criar-conta{
+    display: grid;
+    grid-template-columns: 2;
+    align-content: start;
+    gap: 0px 40px;
+}
+
+.criar-conta label{
+    margin-bottom: 4px;
+    font-weight: 500;
+    font-size: 1rem;
+}
+
+.criar-conta div + div + div{
+    margin-top: 16px;
+}
+
+.criar-conta .nome-campo{
+    grid-column: 1;
+}
+
+.criar-conta .sobrenome-campo{
+    grid-column: 2;
+}
+
+.criar-conta .cpf-campo{ 
+    grid-column: 1;
+}
+
+.criar-conta .email-campo{
+    grid-column: 2;
+}
+
+.criar-conta .senha-campo{
+    grid-column: 1 / 3;
+}
+
+.criar-conta input{
+    background-color: #fafafa;
+    width: 100%;
+    border-radius: 4px;
+    padding: 8px;
+    outline: none;
+    border: 2px solid transparent;
+    transition: .3s;
+}
+
+.criar-conta .dados::before, .criar-conta .entrega::before{
+    content: '';
+    display: inline-block;
+    height: 8px;
+    width: 4px;
+    margin-right: 4px;
+    background-color: #3D55B8;
+}
+
+.criar-conta .cep-campo{
+    grid-column: 1;
+}
+
+.criar-conta .estado-campo{
+    grid-column: 2;
+}
+
+.criar-conta .cidade-campo{ 
+    grid-column: 1;
+}
+
+.criar-conta .bairro-campo{
+    grid-column: 2;
+}
+
+.criar-conta .bairro-campo{
+    grid-column: 2;
+}
+
+.criar-conta .termos{
+    display: grid;
+    grid-template-columns: auto 1fr;
+    margin-bottom: 0px !important;
+    /* justify-content: flex-start; */
+    grid-column: 1 / 3 ;
+    width: 100%;
+}
+
+.criar-conta .termos span{
+    grid-column: 1 / -1;
+}
+
+.criar-conta .termos span{
+    display: inline !important;
+}
+
+.termos #termos{
+    width: 16px;
+    margin-right: 8px;
+    margin-bottom: 3.5px;
+}
+
+.criar-conta button{
+    grid-column: 1 / -1;
+    width: fit-content;
+}
+
+.criar-conta input:focus{
+    border-color: #3D55B8;
+}
+
+span{
+    display: inline-block;
+}
+
+@media (max-width: 1024px){
+    #login-form{
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .login-form{
+        grid-row: 2;
+    }
+
+    .login-form {
+        place-self: center;
+    }
+
+    #criar-form{
+        grid-template-columns: 1fr;
+    }
+
+    .criar-conta div{
+        grid-column: 1 !important;
+    }
+
+    .criar-conta .nome-campo{
+        margin-bottom: 12px;
+    }
+}
+
+[data-criar]{
+    transition: .5s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+[data-criar].reveal{
+    opacity: 1;
+    transform: translateY(0);
+}
+
+[data-login]{
+    transition: .5s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+[data-login].reveal{
+    opacity: 1;
+    transform: translateY(0);
+}

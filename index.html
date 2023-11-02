@@ -1,0 +1,849 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Os melhores produtos gamers com o melhor preço do mercado!">
+    <title>EGAMES | Melhor comércio gamer</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="shortcut icon" href="/assets/images/joystick logo.svg" type="image/x-icon">
+    <link rel="preload" href="node_modules/remixicon/fonts/remixicon.css" as="style">
+    <link rel="stylesheet" href="node_modules/remixicon/fonts/remixicon.css">
+    <link rel="preload" href="css/home.css" as="style">
+    <link rel="stylesheet" href="css/home.css">
+    <link rel="preload" href="css/output.css" as="style">
+    <link rel="stylesheet" href="css/output.css">
+    <link rel="preload" href="css/slide.css" as="style">
+    <link rel="stylesheet" href="css/slide.css">
+    <link rel="preload" href="css/scrol-reveal.css" as="style">
+    <link rel="stylesheet" href="css/scrol-reveal.css">
+    <script defer src="/script.js"></script>
+    <link rel="preload" href="node_modules/swiper/swiper-bundle.min.css" as="style">
+    <link rel="stylesheet" href="node_modules/swiper/swiper-bundle.min.css">
+    <script src="node_modules/swiper/swiper-bundle.min.js"></script>
+    <script defer src="scroll-reveal.js"></script>
+    <script defer src="local-storage.js"></script>
+</head>
+
+<body>
+    <header class="header-bg bg-blue-9 z-10 max-lg:px-3" id="header">
+        <div class="container-width flex justify-between items-center max-md:p-3 relative lg:py-5">
+            <a href="/index.html" class="w-fit z-10">
+                <img src="/assets/images/logo.svg" alt="logo" class="max-md:h-[1rem] ">
+            </a>
+
+            <div
+                class="max-lg:hidden ml-auto search flex bg-gray-1 text-gray-10 font-poppins text-[.9rem] shadow-template  px-3 py-2 w-[500px] rounded justify-between">
+                <input class="bg-gray-1 border-none outline-none flex-1 placeholder:text-gray-10" type="text" name=""
+                    id="" placeholder="O que você procura?">
+                <i class="ri-search-line"></i>
+            </div>
+            <!-- <input type="text" name="" id="usuario-logado" class="outline-none border-none bg-transparent" disabled> -->
+            <span class="ml-auto mr-4 text-gray-1 font-medium" id="usuario-logado"></span>
+            <div class="max-lg:hidden user-options flex gap-2 text-gray-2 text-[1.5rem] z-10">
+                <i class="ri-user-3-fill cursor-pointer relative login-opcoes" >
+                    <div
+                        class="login-info login-animate absolute grid w-[140px] inativo bg-gray-2 text-[1rem] text-gray-1 font-normal py-4 px-4 rounded shadow-template gap-4 font-poppins z-10">
+                        <a id="opcao-criar" href="/login/criar-conta.html" class="block bg-blue-8 p-2 rounded ">Criar
+                            conta</a>
+                        <a id="opcao-login" href="/login/acessar-conta.html"
+                            class="block w-full p-2 rounded text-gray-13">Fazer
+                            login</a>
+                    </div>
+                </i>
+
+                <div id="favoritos">
+                    <i class="ri-heart-fill relative">
+                        <span
+                            class="absolute top-0 right-[-5px] bg-blue-8 text-[.6rem] font-semibold rounded-full px-1">0</span>
+                    </i>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <input type="checkbox" name="" id="menu" class="hidden">
+            <label for="menu" class="z-10 lg:hidden">
+                <div class="menu-hamburguer relative">
+                </div>
+            </label>
+
+            <div class="menu-mobile fixed bg-blue-10 top-0 w-full p-3 pt-14 right-0 transform h-screen z-[2] lg:hidden">
+                <div class="busca bg-[#f2f2f2] text-[1.1rem] pr-2 flex justify-between items-center mb-3 rounded">
+
+                    <input type="text" name="" id="" placeholder="Busque aqui"
+                        class="p-2 bg-[transparent] flex-1 placeholder:text-gray-8 outline-none font-normal">
+                    <i class="ri-search-line text-gray-8 cursor-pointer"></i>
+
+                </div>
+                <nav class="nav-mobile">
+                    <ul class="text-[1.1rem] flex flex-col gap-2">
+                        <li><i class="ri-price-tag-3-fill"></i><a href="">Ofertas do dia</a></li>
+                        <li><i class="ri-megaphone-fill"></i><a href="">Lançamentos</a></li>
+                        <li><i class="ri-computer-fill"></i><a href="">Computadores</a></li>
+                        <li><i class="ri-smartphone-fill"></i><a href="">Eletrônicos</a></li>
+                        <li><i class="ri-keyboard-fill"></i><a href="">Teclados</a></li>
+                        <li><i class="ri-gamepad-fill"></i><a href="">Videogames</a></li>
+                        <li><i class="ri-game-fill"></i><a href="">Jogos</a></li>
+                        <li><i class="ri-shopping-cart-2-fill"></i><a href=""></i>Carrinho</a></li>
+                        <li><i class="ri-heart-fill"></i><a href="">Lista de desejos</a></li>
+                        <li><i class="ri-user-3-fill"></i><a href="/login/acessar-conta.html">Minha conta</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <nav class="max-lg:hidden sub-menu bg-blue-12" data-top="">
+        <ul
+            class="text-[1.1rem] flex gap-5 container-width justify-between text-gray-1 py-5 uppercase font-medium tracking-[.9px]">
+            <li><a href="/index.html#ofertas">Ofertas do dia</a></li>
+            <li><a href="">Lançamentos</a></li>
+            <li><a href="#">Computadores</a></li>
+            <li><a href="#">Eletrônicos</a></li>
+            <li><a href="#">Teclados</a></li>
+            <li><a href="#">Smartphones</a></li>
+            <li><a href="#">Videogames</a></li>
+            <li><a href="#jogos">Jogos</a></li>
+        </ul>
+    </nav>
+
+    <section class="swiper1 swiper max-lg:max-h-[300px]" data-top="">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide ">
+                <img src="assets/images/slide1.avif" alt="" width="1920" height="600"
+                    class=" object-cover h-full relative">
+                <div class="container-width max-lg:ml-5">
+                    <h1
+                        class=" absolute text-gray-1 text-[1.5rem] md:text-[3rem] bottom-[40%] lg:text-[5rem] font-semibold lg:bottom-[40%] max-w-[20ch] leading-[1.115]">
+                        DESCONTOS DE ATÉ 38% EM MONITORES</h1>
+                    <a href="/produtos//monitor.html"
+                        class="absolute  bottom-[15%] text-[.8rem] md:text-[1rem] md:bottom-[25%] lg:bottom-[25%] degrade-botao lg:text-[1.5rem]">COMPRAR
+                        AGORA</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/images/slide-2.avif" alt="" width="1920" height="600"
+                    class=" object-cover h-full relative ">
+                <div class="container-width max-lg:ml-5">
+                    <h1
+                        class=" absolute text-gray-1 text-[1.5rem] md:text-[3rem] bottom-[40%] lg:text-[5rem] font-semibold lg:bottom-[40%] max-w-[20ch] leading-[1.115]">
+                        DESCONTOS DE ATÉ 12% EM HEADSETS</h1>
+                    <a href="/produtos/headset.html"
+                        class="absolute  bottom-[15%] text-[.8rem] md:text-[1rem] md:bottom-[25%] lg:bottom-[25%] degrade-botao lg:text-[1.5rem]">COMPRAR
+                        AGORA</a>
+                </div>
+            </div>
+            <div class="swiper-slide">
+                <img src="assets/images/slide-3.avif" alt="" width="1920" height="600"
+                    class=" object-cover h-full relative ">
+                <div class="container-width max-lg:ml-5">
+                    <h1
+                        class=" absolute text-gray-1 text-[1.5rem] md:text-[3rem] bottom-[40%] lg:text-[5rem] font-semibold lg:bottom-[40%] max-w-[20ch] leading-[1.115]">
+                        DESCONTOS DE ATÉ 38% EM TECLADOS</h1>
+                    <a href="/produtos/teclado.html"
+                        class="absolute  bottom-[15%] text-[.8rem] md:text-[1rem] md:bottom-[25%] lg:bottom-[25%] degrade-botao lg:text-[1.5rem]">COMPRAR
+                        AGORA</a>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-pagination"></div>
+
+    </section>
+
+
+    <section id="ofertas" class="w-full mt-8 lg:mt-16 mb-16 padding-mobile relative p-10">
+        <img src="assets/images/dec.svg" alt="" class="max-lg:hidden absolute left-20 rotate-180">
+        <img src="assets/icons/element-6.svg" alt="" class="max-lg:hidden absolute top-20 rotate-180 right-20 h-8">
+
+        <div class="container-width max-lg:px-3">
+            <div class="titulo relative flex items-center justify-between" data-bottom-top="">
+                <h1 class="font-semibold max-lg:text-[1.5rem] text-[2rem] ">OFERTAS DO DIA</h1>
+                <span class="arrow-slide absolute right-0"></span>
+            </div>
+        </div>
+        <div class="ofertas flex w-full max-lg:px-3 gap-8 py-8 container-width ">
+            <div class="swiper2 swiper relative ">
+                <div class="swiper-wrapper" id="wip">
+
+                    <a href="/produtos/monitor.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="assets/images/monitor-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Monitor gamer IPS LCD, full HD, 144hz, freeSync </h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">28%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 1021,37</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 735,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/produtos/controle.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="assets/images/controle_xbox_1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Controle Microsoft Xbox sem fio, Robot White</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(74)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">16%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">39
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 409,99</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 344,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/produtos/teclado.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="assets/images/teclado_logitech_1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Logitech G512 CARBON LIGHTSYNC RGB, Switch marrom</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-half-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(17)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">38%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">78
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 499,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 309,94</p>
+                        </div>
+
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/produtos/headset.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="assets/images/headset-hyperx2.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">HyperX Cloud Stinger, Headset gamer, Preto </h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">12%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 257,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 226,95</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/produtos/fonte.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="assets/images/fonte-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Fonte Thermaltake SMART 80PLUS White 500w, Preta</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">28%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 1021,37</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 735,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/produtos/mouse-logitech.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay="">
+                        <img src="assets/images/mouse-logitech-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Mouse Logitech 502 Hero, RGB, 11 Botões Programáveis</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(74)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">16%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">39
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 409,99</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 344,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/produtos/processador-ryzen-5.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay="">
+                        <img src="assets/images/ryzen-5-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Processador Ryzen 5 5600X 6 Núcleos 3.7GHz</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-half-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(17)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">38%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">78
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 499,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 309,94</p>
+                        </div>
+
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/produtos/ssd-samsung.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay="">
+                        <img src="assets/images/ssd-samsung-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">SSD 1TB Samsung EVO Series Sata 2.5 560MB Leitura</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">12%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 257,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 226,95</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+                </div>
+
+
+            </div>
+
+        </div>
+        <img src="assets/icons/element-4.svg" alt="" class="h-[32px] max-lg:hidden absolute bottom-0 left-20">
+        <img src="assets/images/dec.svg" alt="" class="max-lg:hidden absolute right-20">
+    </section>
+
+
+    <section id="jogos" class="w-full mt-8 mb-32 padding-mobile relative p-10">
+        <img src="assets/images/dec.svg" alt="" class="max-lg:hidden absolute right-20 -rotate-90">
+        <img src="assets/icons/element-6.svg" alt="" class="max-lg:hidden absolute top-12 rotate-45 left-20 h-8">
+        <div class="container-width padding-mobile">
+            <div class="titulo relative flex items-center h-fit" data-bottom-top="">
+                <h1 class="font-semibold max-lg:text-[1.5rem] text-[2rem] ">JOGOS</h1>
+                <span class="arrow-slide absolute right-0 "></span>
+            </div>
+        </div>
+        <div class=" flex w-full gap-8 py-8 container-width ">
+            <div class="swiper2 swiper relative ">
+                <div class="swiper-wrapper" id="wip">
+                    <a href="/jogos/resident-evil-3.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay-2="">
+                        <img src="assets/images/residentevil3-1.avif" alt="" class="w-[300px] h-[315.25px]">
+                        <h2 class="font-[Inter] font-medium">Resident Evil 3 Remake PS4</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">28%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 1021,37</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 735,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/jogos/ghost-of-tsushima.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay-2="">
+                        <img src="assets/images/ghost-of-tsushima-1-removebg-preview.avif" alt=""
+                            class="w-[300px] h-[315.25px]">
+                        <h2 class=" font-[Inter] font-medium">Ghost of Tsushima Directors Cut PS4</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(74)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">16%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">39
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 409,99</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 344,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/jogos/dying-light-2.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay-2="">
+                        <img src="assets/images/dying-light2-1-removebg-preview.avif" alt=""
+                            class="w-[300px] h-[315.25px]"">
+                        <h2 class=" font-[Inter] font-medium">Dying Light 2 Stay Human PS4</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-half-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(17)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">38%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">78
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 499,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 309,94</p>
+                        </div>
+
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/jogos/elden-ring.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay-2="">
+                        <img src="assets/images/elden.avif" alt="" class="max-h-[315.25px]">
+                        <h2 class="font-[Inter] font-medium">Elden Ring, XBOX One, Series X</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">12%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 257,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 226,95</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/jogos/dark-souls-remastered.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay-2="">
+                        <img src="assets/images/dark-souls-remaster-1.avif" alt="" class="w-[300px] h-[315.25px]">
+                        <h2 class="font-[Inter] font-medium">Dark Souls Remastered PS4</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">28%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 1021,37</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 735,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/jogos/sekiro.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay-2="">
+                        <img src="assets/images/sekiro-1.avif" alt="" class="w-[300px] h-[315.25px]">
+                        <h2 class=" font-[Inter] font-medium">Sekiro Shadows Die Twice PS4</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(74)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">16%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">39
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 409,99</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 344,39</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/jogos/the-witcher-3.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay-2="">
+                        <img src="assets/images/the-witcher-1.avif" alt="" class="w-[300px] h-[315.25px]">
+                        <h2 class=" font-[Inter] font-medium">The Witcher 3 Wild Hunt PS4</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-half-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(17)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">38%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">78
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 499,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 309,94</p>
+                        </div>
+
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                    <a href="/jogos/bloodborne.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay-2="">
+                        <img src="assets/images/bloodborne-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Bloodborne Playstation Hits PS4</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">12%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 257,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 226,95</p>
+                        </div>
+                        <div class="botoes flex gap-2 mt-3">
+                            <button class="degrade-botao text-[1.1rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                            <button
+                                class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                                    src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                        </div>
+                    </a>
+
+                </div>
+
+
+            </div>
+
+        </div>
+        <img src="assets/icons/element-4.svg" alt="" class="h-[32px] max-lg:hidden absolute bottom-0 right-20">
+        <img src="assets/images/dec.svg" alt="" class="max-lg:hidden absolute left-20 rotate-90">
+    </section>
+
+    <section id="marcas" class="mb-32 ">
+
+        <div class="container-width ">
+            <div class="max-lg:ml-5 titulo relative flex items-center h-fit mb-5 ">
+                <h1 class="font-semibold max-lg:text-[1.5rem] text-[2rem] uppercase">Marcas parceiras</h1>
+            </div>
+            <div class="marcas-container grid max-lg:grid-cols-2 grid-cols-4 padding-mobile">
+                <div class="marca br" data-bottom-top2="">
+                    <img src="/assets/images/marca1.avif" alt="">
+                </div>
+
+                <div class="marca br" data-bottom-top2="">
+                    <img src="/assets/images/marca2.avif" alt="">
+                </div>
+
+                <div class="marca br" data-bottom-top2="">
+                    <img src="/assets/images/marca3.avif" alt="">
+                </div>
+
+                <div class="marca " data-bottom-top2="">
+                    <img src="/assets/images/marca4.avif" alt="">
+                </div>
+
+                <div class="marca bt br" data-bottom-top2="">
+                    <img src="/assets/images/marca5.avif" alt="">
+                </div>
+
+                <div class="marca bt br " data-bottom-top2="">
+                    <img src="/assets/images/marca6.avif" alt="">
+                </div>
+
+                <div class="marca bt br" data-bottom-top2="">
+                    <img src="/assets/images/marca7.avif" alt="">
+                </div>
+
+                <div class="marca bt" data-bottom-top2="">
+                    <img src="/assets/images/marca8.avif" alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="servicos" class="bg-gray-14 text-gray-1 py-16">
+        <div class="container-width">
+            <div class=" relative flex items-center h-fit mb-8 padding-mobile">
+                <h1 class="font-semibold max-lg:text-[1.5rem] text-[2rem] uppercase">Nossos serviços</h1>
+            </div>
+            <div class="servicos grid grid-cols-1 lg:grid-cols-3 gap-5 padding-mobile">
+                <div class="card-servico">
+                    <img src="assets/images/icon-delivery.svg" alt="" class="mb-2">
+                    <h1 class="font-semibold text-[1.5rem] uppercase max-w-[20ch] mb-2">Entrega rápida com frete grátis
+                    </h1>
+                    <p class="font-medium text-gray-5 max-w-[30ch] text-[1.1rem]">Garantimos entrega rápida com frete
+                        grátis em todos os pedidos. Com logística eficiente e compromisso com a satisfação do cliente,
+                        entregamos seus produtos no menor tempo possível.</p>
+                </div>
+
+                <div class="card-servico">
+                    <img src="assets/images/Icon-Customer service.svg" alt="" class="mb-2">
+                    <h1 class="font-semibold text-[1.5rem] uppercase max-w-[20ch] mb-2">atendimento ao cliente 24h </h1>
+                    <p class="font-medium text-gray-5 max-w-[30ch] text-[1.1rem]">Nossa equipe de especialistas está
+                        pronta para ajudar a qualquer momento, garantindo suporte contínuo e soluções rápidas para suas
+                        necessidades. Sua tranquilidade é nossa prioridade.</p>
+                </div>
+
+                <div class="card-servico">
+                    <img src="assets/images/icon-delivery.svg" alt="" class="mb-2">
+                    <h1 class="font-semibold text-[1.5rem] uppercase max-w-[20ch] mb-2">garantia de reembolso em até 30
+                        dias</h1>
+                    <p class="font-medium text-gray-5 max-w-[30ch] text-[1.1rem]">Facilitamos a devolução do seu
+                        dinheiro, assegurando que sua confiança e satisfação sejam nossas principais prioridades. Sua
+                        tranquilidade financeira é importante para nós.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="receba-ofertas" class="bg-gray-13">
+        <form action="" id="receber-ofertas"
+            class="container-width flex flex-col lg:flex-row lg:items-center gap-8 py-16 padding-mobile">
+            <h1 class="mr-auto text-[1.5rem] font-semibold uppercase text-gray-1 max-w-[20ch]">Receba novas ofertas no
+                seu email</h1>
+            <div class="qual-nome">
+                <input type="text" name="" id="ofertas-nome" required placeholder="Qual seu nome?"
+                    class=" p-3 rounded outline-none placeholder:text-[.9rem] placeholder:font-medium">
+            </div>
+
+            <div class="qual-email">
+                <input type="email" name="" id="ofertas-email" required placeholder="Qual seu email?"
+                    class=" p-3 rounded outline-none placeholder:text-[.9rem] placeholder:font-medium">
+            </div>
+            <span id="aviso-cadastro"
+                class="z-[1] hidden fixed bottom-2 -right-[100%] text-gray-1 font-poppins bg-gray-14 rounded-md p-4 "><i
+                    class="ri-checkbox-circle-line mr-2 text-green-500 "></i>Cadastro realizado com sucesso!</span>
+            <button id="btn-ofertas" class=" degrade-botao w-fit lg:ml-auto text-[1.2rem]">CADASTRAR</button>
+        </form>
+    </section>
+
+    <div class="fixed right-5 bottom-5 cursor-pointer">
+        <span id="voltaTopo" class="text-blue-8 text-[1.5rem] bg-blue-2 p-2 rounded-md shadow-template hidden">↑</span>
+    </div>
+
+    <footer class="bg-gray-14">
+        <div class="text-gray-1 grid gap-5 px-3 py-6 container-width">
+            <div>
+                <a href="" class="z-10">
+                    <img src="assets/images/logo.svg" alt="logo" class="max-md:h-[1rem]">
+                </a>
+            </div>
+
+            <div>
+                <span class="font-medium block mb-2">DEPARTAMENTOS</span>
+                <ul class="text-gray-6">
+                    <li>Computadores</li>
+                    <li>Eletrônicos</li>
+                    <li>Teclados</li>
+                    <li>Smartphones</li>
+                    <li>Videogames</li>
+                </ul>
+            </div>
+            <div>
+                <span class="font-medium block mb-2">SUA CONTA</span>
+                <ul class="text-gray-6">
+                    <li>Minha Conta</li>
+                    <li>Login/Criar conta</li>
+                    <li>Trocar Senha</li>
+                    <li>Carrinho</li>
+                    <li>Lista de Desejos</li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="font-medium block mb-2">Links Úteis</span>
+                <ul class="text-gray-6">
+                    <li>Politica de Privacidade</li>
+                    <li>Termos de Uso</li>
+                    <li>fAQ’S</li>
+                    <li>Contato</li>
+                </ul>
+            </div>
+            <div>
+                <span class="font-medium block mb-2">BAIXE NOSSO APP</span>
+                <img src="/assets/images/baixe-nosso-app.png" alt="" class="h-[6rem]">
+                <ul class="text-gray-1 flex text-[1.5rem] gap-2">
+                    <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+                    <li><a href=""><i class="ri-twitter-line"></i></a></li>
+                    <li><a href=""><i class="ri-youtube-line"></i></a></li>
+                    <li><a href=""><i class="ri-tiktok-line"></i></a></li>
+                </ul>
+            </div>
+            <span class="text-gray-6 text-[.8rem] col-span-full text-center">Ruan Costa &copy;. Alguns direitos
+                reservados.</span>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>

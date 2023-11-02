@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Egames - Ecommerce Gamer</title>
+        <link rel="shortcut icon" href="/assets/images/joystick logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/remixicon/fonts/remixicon.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/output.css">
+    <link rel="stylesheet" href="/css/login.css">
+    <script defer src="/script.js"></script>
+    <script defer src="login-script.js"></script>
+    <script defer src="/local-storage.js"></script>
+</head>
+
+<body>
+    <header class="header-bg  bg-blue-9 z-10">
+        <div class="container-width flex justify-between items-center max-md:p-3 relative lg:py-5">
+            <a href="/index.html" class="z-10">
+                <img src="/assets/images/logo.svg" alt="logo" class="max-md:h-[1rem]">
+            </a>
+
+            <div
+                class="max-lg:hidden search flex bg-gray-1 text-gray-8 font-poppins text-[.8rem] shadow-template  px-3 py-2 w-[500px] rounded justify-between">
+                <input class="bg-gray-1 border-none outline-none flex-1" type="text" name="" 
+                    placeholder="O que você procura?">
+                <i class="ri-search-line"></i>
+            </div>
+
+            <div class="max-lg:hidden user-options flex gap-2 text-gray-2 text-[1.5rem]">
+                <i class="ri-user-3-fill cursor-pointer relative login-opcoes">
+                    <div
+                        class="login-info login-animate absolute grid w-[140px] inativo bg-gray-2 text-[1rem] text-gray-1 font-normal py-4 px-4 rounded shadow-template gap-4 font-poppins z-10">
+                        <a href="/login/criar-conta.html" class="block bg-blue-8 p-2 rounded ">Criar conta</a>
+                        <a href="/login/acessar-conta.html" class="block w-full p-2 rounded text-gray-13">Fazer
+                            login</a>
+                    </div>
+                </i>
+                <div id="favoritos">
+                    <i class="ri-heart-fill relative">
+                        <span
+                            class="absolute top-0 right-[-5px] bg-blue-8 text-[.6rem] font-semibold rounded-full px-1">0</span>
+                    </i>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <input type="checkbox" name="" id="menu" class="hidden">
+            <label for="menu" class="z-10 lg:hidden">
+                <div class="menu-hamburguer relative">
+                </div>
+            </label>
+
+            <div class="menu-mobile fixed bg-blue-10 top-0 w-full p-3 pt-14 right-0 transform h-screen z-[2] lg:hidden">
+                <div class="busca bg-[#f2f2f2] text-[1.1rem] pr-2 flex justify-between items-center mb-3 rounded">
+
+                    <input type="text" name="" id="" placeholder="Busque aqui"
+                        class="p-2 bg-[transparent] flex-1 placeholder:text-gray-8 outline-none font-normal">
+                    <i class="ri-search-line text-gray-8 cursor-pointer"></i>
+
+                </div>
+                <nav class="nav-mobile">
+                    <ul class="text-[1.1rem] flex flex-col gap-2">
+                        <li><i class="ri-price-tag-3-fill"></i><a href="">Ofertas do dia</a></li>
+                        <li><i class="ri-megaphone-fill"></i><a href="">Lançamentos</a></li>
+                        <li><i class="ri-computer-fill"></i><a href="">Computadores</a></li>
+                        <li><i class="ri-smartphone-fill"></i><a href="">Eletrônicos</a></li>
+                        <li><i class="ri-keyboard-fill"></i><a href="">Teclados</a></li>
+                        <li><i class="ri-gamepad-fill"></i><a href="">Videogames</a></li>
+                        <li><i class="ri-game-fill"></i><a href="">Jogos</a></li>
+                        <li><i class="ri-shopping-cart-2-fill"></i><a href=""></i>Carrinho</a></li>
+                        <li><i class="ri-heart-fill"></i><a href="">Lista de desejos</a></li>
+                        <li><i class="ri-user-3-fill"></i><a href="">Minha conta</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <nav class="max-lg:hidden sub-menu bg-blue-12">
+        <ul
+            class="text-[1.1rem] flex gap-5 container-width justify-between text-gray-1 py-5 uppercase font-medium tracking-[.9px]">
+            <li><a href="/index.html#ofertas">Ofertas do dia</a></li>
+            <li><a href="">Lançamentos</a></li>
+            <li><a href="">Computadores</a></li>
+            <li><a href="">Eletrônicos</a></li>
+            <li><a href="">Teclados</a></li>
+            <li><a href="">Smartphones</a></li>
+            <li><a href="">Videogames</a></li>
+            <li><a href="">Jogos</a></li>
+        </ul>
+    </nav>
+
+    <main class="mb-32">
+        <div class="container-width padding-mobile">
+            <h1 class="text-[2rem] font-semibold my-8 login-titulo" data-login="">FAZER LOGIN</h1>
+            <form action="" id="login-form" class="form-shadow rounded overflow-hidden" data-login="">
+                <picture class="max-lg:hidden login-banner bg-blue-1">
+                    <img src="/assets/images/Privacy policy-rafiki.svg" alt="" class="w-full">
+                </picture>
+
+                <div class="login-form max-lg:p-2 lg:mb-8 lg:mt-8 self-center lg:p-8">
+                    <div class="campo-usuario ">
+                    <label for="usuario" class="text-[1.5rem] font-medium mb-5">Usuário</label>
+                    <div
+                        class="usuario-input border-2 border-transparent bg-gray-1 text-gray-10 p-2 shadow-template max-lg:min-w-[300px] rounded flex items-center gap-2 form-shadow mt-2 ">
+                        <i class="ri-user-3-fill text-[.8rem]"></i>
+                        <input type="text" name="" id="usuario-login"
+                            class="max-lg:w-full bg-gray-1 text-[.9rem] outline-none border-none font-inter font-medium placeholder:text-gray-8"
+                            placeholder="Email, CPF ou usuário">
+                    </div>
+                </div>
+                    <div class="campo-senha mt-8">
+                    <label for="senha" class="text-[1.5rem] font-medium">Senha</label>
+                    <div
+                        class="senha-input border-2 border-transparent bg-gray-1 text-gray-10 p-2 shadow-template max-lg:min-w-[300px] rounded flex items-center gap-2 form-shadow mt-2 mb-2">
+                        <i class="ri-lock-2-fill text-[.8rem]"></i>
+                        <input type="password" name="" id="senha"
+                            class="bg-gray-1 text-[.9rem] outline-none border-none font-inter font-medium placeholder:text-gray-8"
+                            placeholder="•••••••••••">
+                        <div class="ver-senha ml-auto">
+                            <i class="ri-eye-fill ver "></i>
+                            <i class="ri-eye-off-fill inativo esconder"></i>
+                        </div>
+                    </div>
+                </div>
+                    <span class="text-[.8rem] font-medium text-gray-8">Ainda não tem uma conta? <a href="/login/criar-conta.html" class="text-gray-12 font-semibold underline">Registre-se agora</a></span>
+                    <button id="login-button" class=" cursor-pointer block mt-5 degrade-botao text-[1.2rem] max-lg:w-full">FAZER LOGIN</button>
+                    <a href="" class="underline inline-block mt-4 text-[.8rem] font-medium">Esqueci minha senha</a>
+                
+            </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="bg-gray-14">
+        <div class="text-gray-1 grid gap-5 px-3 py-6 container-width">
+            <div>
+                <a href="" class="z-10">
+                    <img src="/assets/images/logo.svg" alt="logo" class="max-md:h-[1rem]">
+                </a>
+            </div>
+
+            <div>
+                <span class="font-medium block mb-2">DEPARTAMENTOS</span>
+                <ul class="text-gray-6">
+                    <li>Computadores</li>
+                    <li>Eletrônicos</li>
+                    <li>Teclados</li>
+                    <li>Smartphones</li>
+                    <li>Videogames</li>
+                </ul>
+            </div>
+            <div>
+                <span class="font-medium block mb-2">SUA CONTA</span>
+                <ul class="text-gray-6">
+                    <li>Minha Conta</li>
+                    <li>Login/Criar conta</li>
+                    <li>Trocar Senha</li>
+                    <li>Carrinho</li>
+                    <li>Lista de Desejos</li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="font-medium block mb-2">Links Úteis</span>
+                <ul class="text-gray-6">
+                    <li>Politica de Privacidade</li>
+                    <li>Termos de Uso</li>
+                    <li>fAQ’S</li>
+                    <li>Contato</li>
+                </ul>
+            </div>
+            <div>
+                <span class="font-medium block mb-2">BAIXE NOSSO APP</span>
+                <img src="//assets/images/baixe-nosso-app.png" alt="" class="h-[6rem]">
+                <ul class="text-gray-1 flex text-[1.5rem] gap-2">
+                    <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+                    <li><a href=""><i class="ri-twitter-line"></i></a></li>
+                    <li><a href=""><i class="ri-youtube-line"></i></a></li>
+                    <li><a href=""><i class="ri-tiktok-line"></i></a></li>
+                </ul>
+            </div>
+            <span class="text-gray-6 text-[.8rem] col-span-full text-center">Ruan Costa &copy;. Alguns direitos
+                reservados.</span>
+        </div>
+
+
+    </footer>
+</body>
+
+</html>

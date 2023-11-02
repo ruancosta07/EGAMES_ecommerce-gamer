@@ -1,0 +1,18 @@
+.swiper{
+    height: 600px;
+}
+
+.swiper-slide{
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: beige;
+}
+
+
+@media (max-width: 600px) {
+    .swiper{
+        height: 200px;
+    }
+}

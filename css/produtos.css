@@ -1,0 +1,10 @@
+[data-produtos] {
+    transition: .3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+[data-produtos].reveal {
+    opacity: 1;
+    transform: translateY(0);
+}

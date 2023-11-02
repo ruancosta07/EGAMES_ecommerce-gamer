@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html lang="pt-br" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EGAMES | Melhor comércio gamer</title>
+    <link rel="shortcut icon" href="/assets/images/joystick logo.svg" type="image/x-icon">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/node_modules/remixicon/fonts/remixicon.css">
+    <link rel="stylesheet" href="/css/home.css">
+    <link rel="stylesheet" href="/css/output.css">
+    <script defer src="/script.js"></script>
+    <script defer src="/produtos/produtos-script.js"></script>
+    <link rel="preload" href="/node_modules/swiper/swiper-bundle.min.css" as="style">
+    <link rel="stylesheet" href="/node_modules/swiper/swiper-bundle.min.css">
+    <script src="/node_modules/swiper/swiper-bundle.min.js"></script>
+    <script defer src="/local-storage.js"></script>
+    <link rel="stylesheet" href="/css/produtos.css">
+</head>
+
+<body>
+    <header class="header-bg bg-blue-9 z-10 max-lg:px-3" id="header">
+        <div class="container-width flex justify-between items-center max-md:p-3 relative lg:py-5">
+            <a href="/index.html" class="w-fit z-10">
+                <img src="/assets/images/logo.svg" alt="logo" class="max-md:h-[1rem] ">
+            </a>
+
+            <div
+                class="max-lg:hidden ml-auto search flex bg-gray-1 text-gray-10 font-poppins text-[.9rem] shadow-template  px-3 py-2 w-[500px] rounded justify-between">
+                <input class="bg-gray-1 border-none outline-none flex-1 placeholder:text-gray-10" type="text" name=""
+                    id="" placeholder="O que você procura?">
+                <i class="ri-search-line"></i>
+            </div>
+            <!-- <input type="text" name="" id="usuario-logado" class="outline-none border-none bg-transparent" disabled> -->
+            <span class="ml-auto mr-4 text-gray-1 font-medium" id="usuario-logado"></span>
+            <div class="max-lg:hidden user-options flex gap-2 text-gray-2 text-[1.5rem]">
+                <i class="ri-user-3-fill cursor-pointer relative login-opcoes">
+                    <div
+                        class="login-info login-animate absolute grid w-[140px] inativo bg-gray-2 text-[1rem] text-gray-1 font-normal py-4 px-4 rounded shadow-template gap-4 font-poppins z-10">
+                        <a id="opcao-criar" href="/login/criar-conta.html" class="block bg-blue-8 p-2 rounded ">Criar
+                            conta</a>
+                        <a id="opcao-login" href="/login/acessar-conta.html"
+                            class="block w-full p-2 rounded text-gray-13">Fazer
+                            login</a>
+                    </div>
+                </i>
+
+                <div id="favoritos">
+                    <i class="ri-heart-fill relative">
+                        <span
+                            class="absolute top-0 right-[-5px] bg-blue-8 text-[.6rem] font-semibold rounded-full px-1">0</span>
+                    </i>
+                </div>
+                <i class="ri-shopping-cart-2-fill"></i>
+            </div>
+
+            <input type="checkbox" name="" id="menu" class="hidden">
+            <label for="menu" class="z-10 lg:hidden">
+                <div class="menu-hamburguer relative">
+                </div>
+            </label>
+
+            <div class="menu-mobile fixed bg-blue-10 top-0 w-full p-3 pt-14 right-0 transform h-screen z-[2] lg:hidden">
+                <div class="busca bg-[#f2f2f2] text-[1.1rem] pr-2 flex justify-between items-center mb-3 rounded">
+
+                    <input type="text" name="" id="" placeholder="Busque aqui"
+                        class="p-2 bg-[transparent] flex-1 placeholder:text-gray-8 outline-none font-normal">
+                    <i class="ri-search-line text-gray-8 cursor-pointer"></i>
+
+                </div>
+                <nav class="nav-mobile">
+                    <ul class="text-[1.1rem] flex flex-col gap-2">
+                        <li><i class="ri-price-tag-3-fill"></i><a href="">Ofertas do dia</a></li>
+                        <li><i class="ri-megaphone-fill"></i><a href="">Lançamentos</a></li>
+                        <li><i class="ri-computer-fill"></i><a href="">Computadores</a></li>
+                        <li><i class="ri-smartphone-fill"></i><a href="">Eletrônicos</a></li>
+                        <li><i class="ri-keyboard-fill"></i><a href="">Teclados</a></li>
+                        <li><i class="ri-gamepad-fill"></i><a href="">Videogames</a></li>
+                        <li><i class="ri-game-fill"></i><a href="">Jogos</a></li>
+                        <li><i class="ri-shopping-cart-2-fill"></i><a href=""></i>Carrinho</a></li>
+                        <li><i class="ri-heart-fill"></i><a href="">Lista de desejos</a></li>
+                        <li><i class="ri-user-3-fill"></i><a href="/login/acessar-conta.html">Minha conta</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <nav class="max-lg:hidden sub-menu bg-blue-12" data-produtos="">
+        <ul
+            class="text-[1.1rem] flex gap-5 container-width justify-between text-gray-1 py-5 uppercase font-medium tracking-[.9px]">
+            <li><a href="/index.html#ofertas">Ofertas do dia</a></li>
+            <li><a href="">Lançamentos</a></li>
+            <li><a href="#">Computadores</a></li>
+            <li><a href="#">Eletrônicos</a></li>
+            <li><a href="#">Teclados</a></li>
+            <li><a href="#">Smartphones</a></li>
+            <li><a href="#">Videogames</a></li>
+            <li><a href="#jogos">Jogos</a></li>
+        </ul>
+    </nav>
+
+    <div class="container-width localizacao flex py-3 items-center font-semibold text-gray-8">
+        <a href="/index.html" class="mr-1">Início</a>
+        <span>></span>
+        <a href="/produtos/monitor.html" class="ml-1">Controles</a>
+    </div>
+
+    <main class="produto-apresentacao p-3">
+        <div class="container-width produto-container">
+            <div class="img-principal mb-3 relative">
+                <div id="favoritar"
+                    class="text-[1.5rem] bg-gray-1 shadow-template w-fit rounded-full px-2 absolute max-lg:right-0 right-5"
+                    data-produtos="">
+                    <i class="ri-heart-line text-gray-10"></i>
+                </div>
+                <img src="/assets/images/fonte-1.avif" alt="" id="img-principal" data-produtos="">
+
+            </div>
+            <div class="images-produto flex justify-between flex-wrap">
+                <img class="img-opcao img-item1 h-[100px] p-2 rounded-md cursor-pointer ativo"
+                    src="/assets/images/fonte-1.avif" alt="" data-produtos="">
+                <img class="img-opcao img-item2 h-[100px] p-2 rounded-md cursor-pointer"
+                    src="/assets/images/fonte-2.avif" alt="" data-produtos="">
+                <img class="img-opcao img-item3 h-[100px] p-2 rounded-md cursor-pointer"
+                    src="/assets/images/fonte-3.avif" alt="" data-produtos="">
+                <img class="img-opcao img-item4 h-[100px] p-2 rounded-md cursor-pointer"
+                    src="/assets/images/fonte-4.avif" alt="" data-produtos="">
+            </div>
+
+            <div class="produto-compra p-3 shadow-template" data-produtos="">
+                <h1 class="text-[1.3rem] font-inter font-medium">Fonte Thermaltake SMART 80PLUS White 500w, Preta</h1>
+                <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                    <i class="ri-star-s-fill"></i>
+                    <i class="ri-star-s-fill"></i>
+                    <i class="ri-star-s-fill"></i>
+                    <i class="ri-star-s-fill"></i>
+                    <i class="ri-star-s-fill"></i>
+                    <span class="text-[.7rem] font-medium text-gray-8">(74)</span>
+                </div>
+                <div class="price mb-8 bg-gray-1 ">
+                    <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 409,99</p>
+                    <p class="font-semibold text-gray-13 text-[1.5rem] mb-3">R$ 344,39</p>
+                    <p class="text-gray-8 font-medium mb-2">À vista no <span class="text-gray-13">PIX</span> com até
+                        <span class="text-gray-13">5% OFF</span>
+                    </p>
+                    <p class="text-gray-8 font-medium mb-2">Em até 10x de R$ 34,43 sem juros ou em 1x no cartão com
+                        <span class="text-gray-13">5% OFF</span>
+                    </p>
+                    <a href="" class="underline font-medium text-gray-10 ">Outras formas de pagamento</a>
+                </div>
+                <div class="acao-compra flex gap-5">
+                    <button class="degrade-botao text-[1.2rem] font-medium px-[24px] py-[12px]">COMPRAR</button>
+                    <button
+                        class="bg-blue-4 text-blue-12 flex items-center gap-2 text-[1.1rem] font-medium px-[16px] py-[8px] rounded"><img
+                            src="/assets/images/carrinho-produto.svg" alt="" class="h-5">ADICIONAR</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <section id="descricao" aria-label="Descrição do produto" class="p-3" data-produtos="">
+        <div class="container-width">
+            <div class="titulo flex justify-between items-center text-[1.2rem]">
+                <i class="ri-file-text-line text-blue-8"></i>
+                <h1 class="mr-auto font-semibold uppercase ml-1"> Descrição do produto </h1>
+                <i class="ri-arrow-down-s-line text-[1.6rem] arrow "></i>
+            </div>
+            <p class="conteudo font-normal text-[1.1rem] leading-[1.35] text-gray-13 inativo mt-4">Experiência de
+                jogabilidade incomparável, combinando design ergonômico e alta tecnologia. Liberte-se dos cabos e
+                desfrute
+                de jogos com total liberdade de movimentos. Os botões responsivos e o design confortável permitem horas
+                de
+                jogo sem fadiga, enquanto a precisão e sensibilidade dos joysticks proporcionam um controle preciso.</p>
+        </div>
+    </section>
+
+    <section id="especificacoes" aria-label="Especificações" class="p-3" data-produtos="">
+        <div class="container-width">
+            <div class="titulo flex justify-between items-center text-[1.2rem]">
+                <i class="ri-tools-line text-blue-8"></i>
+                <h1 class="mr-auto font-semibold uppercase ml-1">Especificações</h1>
+                <i class="ri-arrow-down-s-line text-[1.6rem] arrow"></i>
+            </div>
+            <ul class="list-disc ml-6 conteudo font-normal text-[1.1rem] leading-[1.35] text-gray-13 inativo mt-4">
+                <li>Conexão sem fio via Xbox Wireless ou Bluetooth.</li>
+                <li>Usa duas pilhas AA ou bateria interna recarregável (depende do modelo).</li>
+                <li>Design ergonômico com empunhaduras texturizadas.</li>
+                <li>Sensores de movimento, feedback de vibração.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="avaliacao" class="p-3 mb-3" data-produtos="">
+        <div class="container-width">
+            <div class="titulo flex justify-between items-center text-[1.2rem]">
+                <i class="ri-message-2-line text-blue-8"></i>
+                <h1 class="mr-auto font-semibold uppercase ml-1">Avaliações do produto</h1>
+                <i class="ri-arrow-down-s-line text-[1.6rem] arrow"></i>
+            </div>
+            <div class="ordernar  flex items-center font-medium text-[1.1rem] inativo mt-2" id="ordenar">
+                <i class="ri-arrow-up-down-line text-blue-8 mr-1"></i>
+                <h2>Ordenar por: </h2>
+                <div class="select ml-4 text-gray-10 p-5 relative shadow-template rounded-t z-[1] bg-gray-1 grid gap-2">
+                    <!-- <div class="absolute w-full h-full bg-gray-1 left-0 top-0 z-10 bloco"></div> -->
+                    <div id="bbb">
+                        <input type="radio" name="ordenar" id="recentes" class="" checked>
+                        <label for="recentes">
+                            <span>Mais recentes</span>
+                        </label>
+                    </div>
+                    <div class="inativo " id="aaa">
+                        <input type="radio" name="ordenar" id="antigos" class="">
+                        <label for="antigos">
+                            <span>Mais antigos</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <article class="comentarios mt-3 inativo flex flex-col">
+                <div class="comentario1 shadow-template p-5 rounded order-1">
+                    <span class="text-[1.2rem] font-semibold">Felipe Santos</span>
+                    <div class="rate flex text-blue-8 items-center text-[1.2rem] leading-none mb-1">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                    </div>
+                    <span class="text-gray-8 font-medium mb-3">Avaliado em: 15/10/2023</span>
+                    <h3 class="font-semibold text-[1.5rem] mb-2">Entrega rápida</h3>
+                    <p class="font-normal text-gray-12">"Estou extremamente satisfeito com minha compra neste ecommerce!
+                        O
+                        produto superou minhas expectativas em qualidade e entrega rápida. Com certeza, vou voltar a
+                        comprar
+                        aqui."</p>
+                </div>
+
+                <div class="comentario2 shadow-template p-5 rounded order-2">
+                    <span class="text-[1.2rem] font-semibold">CLáudio Pereira</span>
+                    <div class="rate flex text-blue-8 items-center text-[1.2rem] leading-none mb-1">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-half-s-fill"></i>
+                    </div>
+                    <span class="text-gray-8 font-medium mb-3">Avaliado em: 05/10/2023</span>
+                    <h3 class="font-semibold text-[1.5rem] mb-2">Excelente atendimento</h3>
+                    <p class="font-normal text-gray-12">"Não poderia estar mais contente com minha experiência de compra
+                        neste ecommerce. O produto chegou em perfeitas condições, exatamente como descrito, e o
+                        atendimento
+                        ao cliente foi excepcional. Recomendo a todos!"</p>
+                </div>
+
+                <div class="comentario3 shadow-template p-5 rounded order-3">
+                    <span class="text-[1.2rem] font-semibold">Roberto Monte</span>
+                    <div class="rate flex text-blue-8 items-center text-[1.2rem] leading-none mb-1">
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                        <i class="ri-star-s-fill"></i>
+                    </div>
+                    <span class="text-gray-8 font-medium mb-3">Avaliado em: 27/09/2023</span>
+                    <h3 class="font-semibold text-[1.5rem] mb-2">Produto de qualidade</h3>
+                    <p class="font-normal text-gray-12">"Estou impressionado com a excepcional qualidade do produto que
+                        comprei neste ecommerce. Cada detalhe foi cuidadosamente elaborado, e ele atendeu todas as
+                        minhas
+                        expectativas. Uma compra que valeu a pena!"</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section id="relacionados" class="w-full mb-8 lg:mb-32 relative padding-mobile" data-produtos="">
+        <div class="container-width">
+            <div class="titulo flex items-center relative">
+                <h1 class=" max-lg:text-[1.5rem] lg:text-[1.5rem] font-semibold uppercase">Produtos relacionados</h1>
+                <span class="arrow-slide"></span>
+            </div>
+        </div>
+        <div class="container-width flex w-full">
+            <div class="swiper swiper3 relative">
+                <div class="swiper-wrapper py-8">
+                    <a href="/produtos/monitor.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="/assets/images/monitor-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Monitor gamer IPS LCD, full HD, 144hz, freeSync </h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">28%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 1021,37</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 735,39</p>
+                        </div>
+
+                    </a>
+
+                    <a href="/produtos/controle.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="/assets/images/controle_xbox_1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Controle Microsoft Xbox sem fio, Robot White</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(74)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">16%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">39
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 409,99</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 344,39</p>
+                        </div>
+
+                    </a>
+
+                    <a href="/produtos/teclado.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="/assets/images/teclado_logitech_1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Logitech G512 CARBON LIGHTSYNC RGB, Switch marrom</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-half-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(17)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">38%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">78
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 499,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 309,94</p>
+                        </div>
+
+
+                    </a>
+
+                    <a href="/produtos/headset.html" class="oferta-card swiper-slide flex flex-col relative py-4 px-2"
+                        data-bottom-top-delay="">
+                        <img src="/assets/images/headset-hyperx2.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">HyperX Cloud Stinger, Headset gamer, Preto </h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">12%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 257,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 226,95</p>
+                        </div>
+
+                    </a>
+
+
+                    <a href="produtos/mouse-logitech.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay="">
+                        <img src="/assets/images/mouse-logitech-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Mouse Logitech 502 Hero, RGB, 11 Botões Programáveis</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(74)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">16%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">39
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 409,99</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 344,39</p>
+                        </div>
+
+                    </a>
+
+                    <a href="/produtos/processador-ryzen-5.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay="">
+                        <img src="/assets/images/ryzen-5-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">Processador Ryzen 5 5600X 6 Núcleos 3.7GHz</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-half-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(17)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">38%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">78
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 499,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 309,94</p>
+                        </div>
+
+
+                    </a>
+
+                    <a href="/produtos/ssd-samsung.html"
+                        class="oferta-card swiper-slide flex flex-col relative py-4 px-2" data-bottom-top-delay="">
+                        <img src="/assets/images/ssd-samsung-1.avif" alt="">
+                        <h2 class="font-[Inter] font-medium">SSD 1TB Samsung EVO Series Sata 2.5 560MB Leitura</h2>
+                        <div class="rate flex text-blue-8 items-center text-[1.5rem] mb-2">
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <i class="ri-star-s-fill"></i>
+                            <span class="text-[.7rem] font-medium text-gray-8">(121)</span>
+                            <span class="absolute left-0 top-2 text-[.8rem] text-gray-1 bg-blue-8 py-1 px-2 rounded">12%
+                                OFF
+                                <i class="ri-fire-line"></i></span>
+                            <span
+                                class="absolute right-0 top-2 text-[.8rem] text-blue-6 border border-blue-6 py-1 px-2 rounded">12
+                                unidades</span>
+                        </div>
+                        <div class="price">
+                            <p class="line-through text-gray-7 text-[.9rem] font-semibold mb-1">R$ 257,90</p>
+                            <p class="font-semibold text-gray-13 text-[1.5rem]">R$ 226,95</p>
+                        </div>
+
+                    </a>
+
+
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+
+    <footer class="bg-gray-14 ">
+        <div class="text-gray-1 grid gap-5 px-3 py-6 container-width">
+            <div>
+                <a href="" class="z-10">
+                    <img src="/assets/images/logo.svg" alt="logo" class="max-md:h-[1rem]">
+                </a>
+            </div>
+
+            <div>
+                <span class="font-medium block mb-2">DEPARTAMENTOS</span>
+                <ul class="text-gray-6">
+                    <li>Computadores</li>
+                    <li>Eletrônicos</li>
+                    <li>Teclados</li>
+                    <li>Smartphones</li>
+                    <li>Videogames</li>
+                </ul>
+            </div>
+            <div>
+                <span class="font-medium block mb-2">SUA CONTA</span>
+                <ul class="text-gray-6">
+                    <li>Minha Conta</li>
+                    <li>Login/Criar conta</li>
+                    <li>Trocar Senha</li>
+                    <li>Carrinho</li>
+                    <li>Lista de Desejos</li>
+                </ul>
+            </div>
+
+            <div>
+                <span class="font-medium block mb-2">Links Úteis</span>
+                <ul class="text-gray-6">
+                    <li>Politica de Privacidade</li>
+                    <li>Termos de Uso</li>
+                    <li>fAQ’S</li>
+                    <li>Contato</li>
+                </ul>
+            </div>
+            <div>
+                <span class="font-medium block mb-2">BAIXE NOSSO APP</span>
+                <img src="/assets/images/baixe-nosso-app.png" alt="" class="h-[6rem]">
+                <ul class="text-gray-1 flex text-[1.5rem] gap-2">
+                    <li><a href=""><i class="ri-facebook-fill"></i></a></li>
+                    <li><a href=""><i class="ri-twitter-line"></i></a></li>
+                    <li><a href=""><i class="ri-youtube-line"></i></a></li>
+                    <li><a href=""><i class="ri-tiktok-line"></i></a></li>
+                </ul>
+            </div>
+            <span class="text-gray-6 text-[.8rem] col-span-full text-center">Ruan Costa &copy;. Alguns direitos
+                reservados.</span>
+        </div>
+    </footer>
+
+    <div class="fixed right-5 bottom-5 cursor-pointer">
+        <span id="voltaTopo" class="text-blue-8 text-[1.5rem] bg-blue-2 p-2 rounded-md shadow-template hidden">↑</span>
+    </div>
+</body>
+
+</html>

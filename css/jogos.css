@@ -1,0 +1,42 @@
+@media (max-width: 768px) {
+    #relacionados .titulo h1{
+        max-width: 20ch;
+    }
+
+    .swiper-slide h2{
+        max-width: 20ch;
+    }
+}
+#relacionados img{
+    width: 200px !important;
+    height: 200px !important;
+    margin-top: 32px;
+}
+#relacionados .swiper .swiper-wrapper .swiper-slide{
+    display: flex !important;
+    min-width: fit-content !important;
+}
+
+.swiper-slide h2{
+    font-size: 1rem;
+    margin: 10px 0px 0px 0px !important;
+}
+
+.rate{
+    font-size: 1.2rem;
+}
+
+.titulo .arrow-slide::before{
+    bottom: 25px !important;
+} 
+
+[data-jogos]{
+    transition: .3s ease-in-out;
+    opacity: 0;
+    transform: translateY(-50px);
+}
+
+[data-jogos].reveal{
+    opacity: 1;
+    transform: translateY(0);
+}
