@@ -37,6 +37,7 @@ loginOpcoes.addEventListener('mouseleave', () => {
 
 const swiperPrincipal = new Swiper(".swiper1", {
     slidesPerView: 1,
+    speed: 1500,
     autoHeight: false,
     autoplay: {
         delay: 5000,
