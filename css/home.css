@@ -202,8 +202,8 @@ footer .container-width {
 
 @media (max-width: 1024px) {
     .localizacao {
-        padding-left: 24px;
-        padding-right: 24px;
+        padding-left: 24px !important;
+        padding-right: 24px !important;
     }
 
     .padding-mobile {
