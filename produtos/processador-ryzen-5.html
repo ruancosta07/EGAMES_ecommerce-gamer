@@ -65,7 +65,7 @@
                 </div>
             </label>
 
-            <div class="menu-mobile fixed bg-blue-10 top-0 w-full p-3 pt-14 right-0 transform h-screen z-[2] lg:hidden">
+            <div class="menu-mobile hidden fixed bg-blue-10 top-0 w-full p-3 pt-14 right-0 transform h-screen z-[2] lg:hidden">
                 <div class="busca bg-[#f2f2f2] text-[1.1rem] pr-2 flex justify-between items-center mb-3 rounded">
 
                     <input type="text" name="" id="" placeholder="Busque aqui"
@@ -73,15 +73,15 @@
                     <i class="ri-search-line text-gray-8 cursor-pointer"></i>
 
                 </div>
-                <nav class="nav-mobile">
+                <nav class="nav-mobile ">
                     <ul class="text-[1.1rem] flex flex-col gap-2">
-                        <li><i class="ri-price-tag-3-fill"></i><a href="">Ofertas do dia</a></li>
+                        <li><i class="ri-price-tag-3-fill"></i><a href="/index.html#ofertas">Ofertas do dia</a></li>
                         <li><i class="ri-megaphone-fill"></i><a href="">Lançamentos</a></li>
                         <li><i class="ri-computer-fill"></i><a href="">Computadores</a></li>
                         <li><i class="ri-smartphone-fill"></i><a href="">Eletrônicos</a></li>
                         <li><i class="ri-keyboard-fill"></i><a href="">Teclados</a></li>
                         <li><i class="ri-gamepad-fill"></i><a href="">Videogames</a></li>
-                        <li><i class="ri-game-fill"></i><a href="">Jogos</a></li>
+                        <li><i class="ri-game-fill"></i><a href="/index.html#jogos">Jogos</a></li>
                         <li><i class="ri-shopping-cart-2-fill"></i><a href=""></i>Carrinho</a></li>
                         <li><i class="ri-heart-fill"></i><a href="">Lista de desejos</a></li>
                         <li><i class="ri-user-3-fill"></i><a href="/login/acessar-conta.html">Minha conta</a></li>
@@ -112,13 +112,13 @@
     </div>
 
     <main class="produto-apresentacao p-3">
-        <div class="container-width produto-container">
+        <div class="container-width produto-container" data-produtos="">
             <div class="img-principal mb-3 relative">
                 <div id="favoritar"
-                    class="text-[1.5rem] bg-gray-1 shadow-template w-fit rounded-full px-2 absolute max-lg:right-0 right-5" data-produtos="">
+                    class="text-[1.5rem] bg-gray-1 shadow-template w-fit rounded-full px-2 absolute max-lg:right-0 right-5">
                     <i class="ri-heart-line text-gray-10"></i>
                 </div>
-                <img src="/assets/images/ryzen-5-1.avif" alt="" id="img-principal" data-produtos="">
+                <img src="/assets/images/ryzen-5-1.avif" alt="" id="img-principal">
 
             </div>
             <div class="images-produto flex justify-between flex-wrap">

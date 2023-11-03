@@ -1,4 +1,4 @@
-[data-produtos] {
+[data-produtos]{
     transition: .3s ease-in-out;
     opacity: 0;
     transform: translateY(-50px);

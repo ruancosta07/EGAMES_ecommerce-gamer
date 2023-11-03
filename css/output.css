@@ -1856,10 +1856,6 @@ footer .container-width {
   .max-md\:h-\[1rem\] {
     height: 1rem;
   }
-
-  .max-md\:p-3 {
-    padding: 0.75rem;
-  }
 }
 
 @media (min-width: 768px) {

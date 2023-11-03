@@ -1,12 +1,20 @@
 let menu = document.getElementById('menu');
 let navMobile = document.querySelector('.menu-mobile')
 
+
 menu.addEventListener('click', () => {
     if (menu.checked == true) {
-        navMobile.classList.remove('transform')
+        navMobile.classList.remove('hidden')
+        setTimeout(()=>{
+            navMobile.classList.remove('transform')
+        }, 100)
+        
     }
     else {
         navMobile.classList.add('transform')
+        setTimeout(()=>{
+            navMobile.classList.remove('hidden')
+        }, 100)
     }
 })
 
@@ -124,3 +132,11 @@ if (document.contains(formreceberOfertas)) {
 }
 
 
+let linksMobile = document.querySelectorAll('.nav-mobile a');
+
+linksMobile.forEach((el)=>{
+    el.addEventListener('click', ()=>{
+        navMobile.classList.add('transform');
+        menu.checked = false
+    })
+})
